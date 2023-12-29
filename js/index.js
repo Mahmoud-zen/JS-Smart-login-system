@@ -6,9 +6,9 @@ var loginBtn=document.getElementById('loginBtn')
 var signIn=document.getElementById("signIn")
 var signUp=document.getElementById("signUp")
 var success=document.getElementById("success")
-var t1=document.getElementById("nameNotvalid")
-var t2=document.getElementById("emailNotvalid")
-var t3=document.getElementById("passwordNotvalid")
+var nameNotvalid=document.getElementById("nameNotvalid")
+var emailNotvalid=document.getElementById("emailNotvalid")
+var passwordNotvalid=document.getElementById("passwordNotvalid")
 var namePole;
 var emailPole;
 var passPole;
@@ -100,10 +100,10 @@ var regex=/^[a-zA-z]{2,}\s[a-zA-z]{2,}$/
 if(regex.test(yourName.value)==true){
 
     namePole=1 ;
-    t1.classList.replace("d-block","d-none")
+    nameNotvalid.classList.replace("d-block","d-none")
 }
 else{
-    t1.classList.replace("d-none","d-block")
+    nameNotvalid.classList.replace("d-none","d-block")
     namePole=0;
 }
 
@@ -119,8 +119,15 @@ var regex=/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 if(regex.test(yourEmail.value)==true){
 
     emailPole=1 ;
-    t2.classList.replace("d-block","d-none")
+    emailNotvalid.classList.replace("d-block","d-none")
     console.log("regex ok");
+}
+var regex=/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+if(regex.test(yourEmail.value)==false){
+
+    emailPole=0 ;
+    emailNotvalid.classList.replace("d-none","d-block")
+    console.log("regex not ok");
 }
 
 if(usersList.find((user) => user.userEmail === yourEmail.value )){
@@ -135,12 +142,14 @@ console.log("search ok");
 
 
 // ========================================================================================
-else{
-    emailPole=0;
-    t2.classList.replace("d-none","d-block")
-    console.log("not ok");
+// else{
+//     emailPole=0;
+//     emailNotvalid.classList.replace("d-none","d-block")
+//     console.log("not ok");
+// }
 }
-}
+
+
 
 
 // password pattern validation ===============================
@@ -155,11 +164,11 @@ var regex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/
 if(regex.test(yourPassword.value)==true){
 
     passPole=1 ;
-    t3.classList.replace("d-block","d-none")
+    passwordNotvalid.classList.replace("d-block","d-none")
 }
 else{
     passPole=0;
-    t3.classList.replace("d-none","d-block")
+    passwordNotvalid.classList.replace("d-none","d-block")
 }
 }
 
