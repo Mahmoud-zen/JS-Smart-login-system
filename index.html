@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&family=Righteous&family=Titillium+Web&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+<div class="container d-flex justify-content-center align-items-center mt-5">
+<div class="group mx-auto text-center py-4">
+<h1>Smart Login System</h1>
+<input type="text" placeholder="Enter Your Name" id="name" class="d-none input my-2">
+<p class="text-danger d-none text-capitalize" id="nameNotvalid">please Enter your name (example: Mohamed Ali)</p>
+<input type="email" placeholder="Enter Your Email" id="email" class=" input my-2">
+<p class="text-danger d-none text-capitalize" id="emailNotvalid">please Enter a valid email address</p>
+<input type="password" placeholder="Enter Your password" id="password" class="input  my-2">
+<p class="text-danger d-none text-capitalize" id="passwordNotvalid">please Enter a password containes at least one lowercase letter , one uppercase letter , <br>
+     one digit and 8 characters in total </p>
+<p class=" text-warning d-none" id="success">Success</p>
+<button id="loginBtn" type="" class=" my-2 d-block mx-auto submit d-block ">Login</button>
+<button id="signUpBtn" type="" class=" my-2 d-block mx-auto submit d-none ">Sign Up</button>
+<p id="signUp" class="text-white my-2 d-block">Don’t have an account? <span id="" onclick="signUpEnter()" class="">Sign Up</span></p>
+<p id="signIn" class="text-white my-2 d-none">You have an account? <span id="" onclick="signin()" class="">Sign in</span></p>
+</div>
+</div>
+    
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
